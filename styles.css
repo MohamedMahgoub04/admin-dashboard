@@ -7,10 +7,10 @@
 }
 
 :root{
- --main: #62bfad;
- --secondary: #ff8b8b;
- --tertiary: #f9f7e8;
- --white: #fff;
+ --main: #118ab2;
+ --secondary: #ef476f;
+ --tertiary: #fff;
+ --white: #e9ecef;
  --black: #212529;
  --grey: #495057;
 }
@@ -24,6 +24,7 @@ body{
  grid-template: 185px auto / 1fr 5fr;
  grid-template-areas: "aside header" "aside main";
  overflow-x: hidden;
+ position: relative;
 }
 
 header{
@@ -34,7 +35,8 @@ header{
  box-shadow: 0 0 10px 1px #ccc;
 }
 aside{
- position: sticky;
+ /* position: fixed; */
+ top: 0;
  padding-top: 1rem;
  display: flex;
  flex-direction: column;
@@ -42,6 +44,8 @@ aside{
  grid-area: aside;
  background-color: var(--main);
  z-index: 1;
+ width: 17vw;
+ height: 100%;
 }
 #dashboard{
  position: relative;
@@ -71,7 +75,8 @@ aside{
 }
 .aside-item:hover *{
  transition: 0.3s;
- color: var(--black);
+ color: purple;
+ /* background-color: #495057; */
 }
 .aside-item > svg, .aside-item > p, .aside-item > h2{
  color: var(--tertiary);
@@ -93,6 +98,7 @@ aside{
 main{
  display: grid;
  grid-template: 1fr 1fr / 3fr 1fr;
+ /* grid-template: 50% 50% / 75% 25%; */
  grid-template-areas: "projects announcements" "projects trending";
  gap: 2.5rem;
  padding-top: 2.5rem;
@@ -134,25 +140,18 @@ section *{
 #trending{
  grid-area: trending;
 }
+
+/* ----- Projects Section ----- */
 #cards-div{
  display: grid;
  grid-auto-rows: 1fr;
  grid-template: 1fr / repeat(auto-fit, minmax(400px, 1fr));
- /* gap: 1rem; */
- /* justify-content: space-around; */
  padding: 1rem;
  gap: 1.5rem;
- /* row-gap: 0; */
- /* justify-content: center;
- align-content: center; */
- /* align-content: center; */
- /* justify-self: center; */
 }
 .card{
  background-color: var(--tertiary);
  border-radius: 10px;
- /* box-shadow: 0px 0px 0px 3px var(--secondary);
- clip-path: inset(0 15px 0 0); */
  border-left: 5px solid var(--secondary);
  padding: 1rem;
  height: 200px;
@@ -164,45 +163,39 @@ section *{
  font-weight: 500;
 }
 
+/* ----- Announcements Section ----- */
 #announcements *{
  /* border: 1px solid purple; */
 }
-
 #anc-container{
  background-color: var(--tertiary);
  border-radius: 10px;
  /* margin: 0 auto; */
- /* width: 90%; */
  display: flex;
  flex-direction: column;
- /* justify-content: space-between; */
  justify-content: center;
  gap: 1rem;
  padding: 1rem;
  margin-top: 1rem;
  box-shadow: 0 0 5px 1px #ccc;
 }
-
 .anc > h6{
  font-size: 16px;
  font-weight: 500;
 }
-
 .anc > p{
  font-size: 14px;
 }
-
 .hr{
  height: 1px;
  border: none;
- /* border: 1px solid var(--grey); */
  background-color: var(--grey);
- /* width: 50%; */
 }
 #anc-container > hr, .anc > p, .hr{
  color: var(--grey);
 }
 
+/* ----- Trending section ----- */
 #trend-container{
  padding: 1rem;
  margin-top: 1rem;
@@ -241,3 +234,101 @@ section *{
  color: var(--grey);
  font-size: 14px;
 }
+
+/* ----- Header ----- */
+header{
+ display: grid;
+ grid-template: 40% 60% / 60% 40%;
+}
+header *{
+ /* border: 1px solid green; */
+}
+
+#search{
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ align-items: center;
+ gap: 1rem;
+ padding-left: 10%;
+}
+#search > svg{
+ color: var(--grey);
+}
+#search > input{
+ border-radius: 10px;
+ height: 30px;
+ width: 70%;
+ border: 1px solid var(--white);
+ padding-left: 1rem;
+ /* box-shadow: 0 0 2px 0px var(--grey); */
+ background-color: var(--white);
+}
+#search > input:focus{
+ outline: none;
+}
+/*  */
+#account{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: flex-end;
+ gap: 2rem;
+ padding-right: 10%;
+}
+#account > svg{
+ color: var(--grey);
+}
+#account > img{
+ height: 90%;
+ width: auto;
+}
+#account > p{
+ font-weight: 500;
+}
+/*  */
+#welcome{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ padding-left: 10%;
+ gap: 1rem;
+}
+#welcome > img{
+ width: 80px;
+ /* height: 50%; */
+}
+#welcome h4{
+ font-size: 20px;
+ font-weight: 500;
+}
+#welcome p{
+ font-weight: 400;
+}
+/*  */
+#btns{
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-end;
+ align-items: center;
+ gap: 5rem;
+ padding-right: 10%;
+}
+#btns button{
+ transition: 0.1s;
+ font-size: 16px;
+ font-weight: 500;
+ padding: 0.5rem 2rem;
+ border-radius: 20px;
+ background-color: var(--main);
+ color: var(--tertiary);
+ border: 1px solid var(--main);
+ /* gap: 1rem; */
+}
+#btns button:hover{
+ transition: 0.1s;
+ cursor: pointer;
+ background-color: #0d6886;
+ border: 1px solid #0d6886;
+}
+
