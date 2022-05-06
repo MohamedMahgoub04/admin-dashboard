@@ -11,7 +11,8 @@
  --secondary-light: #F79FB4;
  --white: #ffffff;
  --black: #212529;
- --grey: #e9ecef;
+ --grey: #ccc;
+ --grey-light: #e9ecef;
  --grey-dark: #495057;
 }
 body{
@@ -31,7 +32,7 @@ body{
 header{
  grid-area: header;
  background-color: var(--white);
- box-shadow: 0 0 10px 1px #ccc;
+ box-shadow: 0 0 10px 1px var(--grey);
  display: grid;
  grid-template: 40% 60% / 60% 40%;
 }
@@ -50,9 +51,9 @@ header{
  border-radius: 10px;
  height: 30px;
  width: 70%;
- border: 1px solid var(--grey);
+ border: 1px solid var(--grey-light);
  padding-left: 1rem;
- background-color: var(--grey);
+ background-color: var(--grey-light);
 }
 #search > input:focus{
  outline: none;
@@ -139,7 +140,6 @@ aside{
  transform: scale(1.2);
 }
 .aside-item{
- /* transition: 0.3s; */
  position: relative;
  left: 2rem;
  display: flex;
@@ -191,7 +191,7 @@ main{
  padding-left: 2.5rem;
  height: auto;
  grid-area: main;
- background-color: var(--grey);
+ background-color: var(--grey-light);
  z-index: -1;
 }
 section{
@@ -234,7 +234,7 @@ section{
  border-left: 5px solid var(--secondary);
  padding: 1rem;
  height: 200px;
- box-shadow: 0 0 5px 1px #ccc;
+ box-shadow: 0 0 5px 1px var(--grey);
 }
 .card > h6{
  font-size: 18px;
@@ -251,7 +251,7 @@ section{
  gap: 1rem;
  padding: 1rem;
  margin-top: 1rem;
- box-shadow: 0 0 5px 1px #ccc;
+ box-shadow: 0 0 5px 1px var(--grey);
 }
 .anc > h6{
  font-size: 16px;
@@ -275,7 +275,7 @@ section{
  margin-top: 1rem;
  background-color: var(--white);
  border-radius: 10px;
- box-shadow: 0 0 5px 1px #ccc;
+ box-shadow: 0 0 5px 1px var(--grey);
  display: flex;
  flex-direction: column;
  justify-content: space-around;
